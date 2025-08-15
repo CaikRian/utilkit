@@ -1,6 +1,6 @@
 # UTILKit — UX/Front-end Utility Playground (HTML/CSS/JS + Vue bonus)
 
-Projeto **100% utilitário** para portfólio: demonstra **interfaces dinâmicas com HTML, CSS e JavaScript puros**, foco em **responsividade, usabilidade e performance**, colaboração com UX (styleguide/tokens) e **bônus Vue**.
+Demonstra **interfaces dinâmicas com HTML, CSS e JavaScript puros**, foco em **responsividade, usabilidade e performance**, colaboração com UX (styleguide/tokens) e **bônus Vue**.
 
 ## ✨ Funcionalidades
 - **UI Responsiva** (mobile-first) com grade fluida e tokens de design (CSS vars).
@@ -44,7 +44,7 @@ utilkit/
 └── vue/index.html
 ```
 
-## 🧪 O que comprova da vaga
+## 🧪 Testes realizados
 - **HTML/CSS/JS dinâmicos**, **responsividade** forte, foco em **UX/UI**.
 - **Usabilidade/performance**: métricas Web Vitals e micro ajustes.
 - **Trabalho com protótipos/design tokens** (styleguide).
