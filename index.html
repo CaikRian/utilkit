@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UTILKit — UX Utilities</title>
+  <link rel="icon" href="assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Pular para o conteúdo</a>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand">
+        <img src="assets/img/favicon.svg" alt="" width="22" height="22" />
+        <strong>UTILKit</strong>
+      </div>
+      <button id="themeToggle" class="btn ghost" aria-pressed="false" title="Alternar tema">🌙</button>
+      <div class="links">
+        <a href="pages/styleguide.html">Styleguide</a>
+        <a href="pages/a11y.html">A11y</a>
+        <a href="vue/index.html">Vue Bonus</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" class="container">
+    <section class="hero">
+      <h1>Utilitários de UX: rápido, responsivo e acessível</h1>
+      <p class="muted">HTML/CSS/JS puros com foco em responsividade, microinterações e performance. Colabore com o time de UX usando tokens e componentes.</p>
+      <div class="controls">
+        <label class="sr-only" for="fontRange">Tamanho da fonte</label>
+        <input id="fontRange" type="range" min="14" max="20" value="16" />
+        <button class="btn" id="openModal">Abrir Modal</button>
+      </div>
+    </section>
+
+    <section class="filters">
+      <input id="search" class="input" placeholder="Filtrar cards por nome..." />
+      <div class="chips">
+        <button class="chip active" data-tag="all">Todos</button>
+        <button class="chip" data-tag="ux">UX</button>
+        <button class="chip" data-tag="ui">UI</button>
+        <button class="chip" data-tag="perf">Perf</button>
+      </div>
+    </section>
+
+    <section id="grid" class="grid" aria-live="polite">
+      <!-- cards via JS -->
+    </section>
+
+    <section class="tabs">
+      <div role="tablist" aria-label="Guias de conteúdo" class="tablist">
+        <button role="tab" aria-selected="true" class="tab" id="t1" aria-controls="p1">Dicas</button>
+        <button role="tab" aria-selected="false" class="tab" id="t2" aria-controls="p2" tabindex="-1">Performance</button>
+        <button role="tab" aria-selected="false" class="tab" id="t3" aria-controls="p3" tabindex="-1">Acessibilidade</button>
+      </div>
+      <div id="p1" role="tabpanel" aria-labelledby="t1" class="panel">
+        Use variações de contraste, hierarquia visual e espaçamento consistente para guiar o olhar do usuário.
+      </div>
+      <div id="p2" role="tabpanel" aria-labelledby="t2" class="panel hidden">
+        Prefira assets leves, lazy loading e evite layouts instáveis para reduzir CLS. Monitore LCP/FID/CLS.
+      </div>
+      <div id="p3" role="tabpanel" aria-labelledby="t3" class="panel hidden">
+        Garanta foco visível, navegação por teclado e textos alternativos em imagens relevantes.
+      </div>
+    </section>
+
+    <section class="form-box">
+      <h2>Feedback</h2>
+      <form id="feedbackForm" novalidate>
+        <div class="field">
+          <label for="name">Nome</label>
+          <input id="name" name="name" required />
+          <small class="error" id="err-name"></small>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required />
+          <small class="error" id="err-email"></small>
+        </div>
+        <div class="field">
+          <label for="msg">Mensagem</label>
+          <textarea id="msg" name="msg" rows="4" required></textarea>
+          <small class="error" id="err-msg"></small>
+        </div>
+        <button class="btn">Enviar</button>
+        <span id="ok" class="ok" role="status" aria-live="polite"></span>
+      </form>
+    </section>
+  </main>
+
+  <div class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content" role="document">
+      <h2 id="modalTitle">Exemplo de Modal Acessível</h2>
+      <p>Esta janela respeita foco e pode ser fechada com ESC.</p>
+      <button class="btn" id="closeModal">Fechar</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container small muted">UTILKit • 2025</div>
+  </footer>
+
+  <!-- HUD de Performance -->
+  <div id="hud" class="hud"></div>
+
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/perf.js"></script>
+</body>
+</html>

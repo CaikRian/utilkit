@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acessibilidade — UTILKit</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand"><strong>UTILKit</strong></div>
+      <div class="links">
+        <a href="../index.html">Home</a>
+        <a href="styleguide.html">Styleguide</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Acessibilidade</h1>
+    <section class="grid two">
+      <div>
+        <h2>Checklist</h2>
+        <ul>
+          <li>Foco visível e ordem lógica</li>
+          <li>Textos alternativos em imagens</li>
+          <li>Semântica correta (nav, main, section, button...)</li>
+          <li>Contraste mínimo AA/AAA</li>
+          <li>Navegação por teclado (Tab / Shift+Tab)</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contrast Checker</h2>
+        <div class="field">
+          <label for="fg">Cor do texto (hex)</label>
+          <input id="fg" value="#0f1115" class="input"/>
+        </div>
+        <div class="field">
+          <label for="bg">Cor de fundo (hex)</label>
+          <input id="bg" value="#eceff3" class="input"/>
+        </div>
+        <button class="btn" id="check">Checar</button>
+        <pre id="result" class="code"></pre>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="../assets/js/a11y.js"></script>
+</body>
+</html>

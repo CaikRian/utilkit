@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vue Bonus — UTILKit</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <!-- CDN Vue 3 (requer internet) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand"><strong>UTILKit</strong></div>
+      <div class="links">
+        <a href="../index.html">Home</a>
+        <a href="../pages/styleguide.html">Styleguide</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Vue (bônus)</h1>
+    <div id="app" class="card">
+      <h2>{ title }</h2>
+      <input v-model="term" class="input" placeholder="Filtrar itens..." />
+      <ul class="list">
+        <li v-for="item in filtered" :key="item">{ item }</li>
+      </ul>
+      <button class="btn" @click="add">Adicionar item</button>
+    </div>
+  </main>
+
+  <script>
+    const { createApp, computed, ref } = Vue;
+    createApp({
+      setup(){
+        const title = ref("Lista reativa");
+        const term = ref("");
+        const items = ref(["Acessibilidade","Performance","UX Writing","Microinterações"]);
+        const filtered = computed(()=> items.value.filter(i => i.toLowerCase().includes(term.value.toLowerCase())));
+        function add(){ items.value.push("Novo " + (items.value.length+1)); }
+        return { title, term, filtered, add };
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>
